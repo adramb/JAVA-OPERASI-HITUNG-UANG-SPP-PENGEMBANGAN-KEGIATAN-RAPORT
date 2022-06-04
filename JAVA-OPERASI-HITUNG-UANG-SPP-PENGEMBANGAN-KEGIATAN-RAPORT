@@ -1,0 +1,97 @@
+import java.util.Scanner;
+public class latihan_uap_no3 {
+    public static void main (String [] args) {
+        Scanner input = new Scanner (System.in);
+        
+        int pengembangan, SPP, kegiatan, raport;
+        double dibayarkan, peng,sp,keg,rap,biaya;
+        
+        System.out.println ("           RA. AL-Karomah Bogor ");
+        System.out.println (" Silahkan pilih pembayaran yang ingin di bayar !!!");
+        System.out.println (" 1). PENGEMBANGAN ");
+        System.out.println (" 2). SPP ");
+        System.out.println (" 3). KEGIATAN");
+        System.out.println (" 4). RAPORT");
+        System.out.println ("---------------------------------------------------");
+        
+        System.out.print ("Apakah ingin membayar PENGEMBANGAN (pilih 1 jika ya, pilih 2 jika tidak) : ");
+        pengembangan = input.nextInt();
+        System.out.print ("Apakah ingin membayar SPP (pilih 1 jika ya, pilih 2 jika tidak) : ");
+        SPP = input.nextInt();
+        System.out.print ("Apakah ingin membayar UANG KEGIATAN (pilih 1 jika ya, pilih 2 jika tidak) : ");
+        kegiatan = input.nextInt();
+        System.out.print ("Apakah ingin membayar RAPORT (pilih 1 jika ya, pilih 2 jika tidak) : ");
+        raport = input.nextInt();
+        
+        dibayarkan = 0;
+        peng = 3000000;
+        sp = 1200000;
+        keg = 3500000;
+        rap = 500000;
+        
+        if(pengembangan==1 && SPP==1){
+            if(kegiatan==1 && raport==1){
+             System.out.println ("Terimakasih sudah lunas");
+             dibayarkan = peng + sp + keg + rap;
+            }else if (pengembangan == 1 && SPP == 1 && kegiatan == 2 && raport ==1){
+              System.out.println ("uang kegiatan belum Rp. 3.500.000");
+              dibayarkan = peng + sp + rap;
+            }else if (pengembangan == 1 && SPP == 1 && kegiatan == 1 && raport == 2){
+              System.out.println ("uang raport belum Rp.500.000");
+              dibayarkan = peng + sp + keg;
+            }else if (pengembangan == 1 && SPP == 1 && kegiatan == 2 && raport == 2) {
+              System.out.println ("uang kegiatan belum Rp. 3.500.000 dan raport Rp.500.000");
+              dibayarkan = peng + sp;
+            }
+        }
+        //ini 2
+        if (pengembangan == 2 && SPP == 1){
+            if (kegiatan == 1 && raport == 1){
+                System.out.println ("Uang pengembangan belum Rp. 3.000.000");
+                dibayarkan = sp + keg + rap;
+            } else if (pengembangan==2 && SPP == 1 && kegiatan == 2 && raport ==1){
+                System.out.println ("uang pengembangan belum Rp. 3.000.000 dan kegiatan 3.500.000");
+                dibayarkan = sp + rap;
+            } else if (pengembangan == 2 && SPP == 1 && kegiatan == 1 && raport == 2){
+                System.out.println ("uang pengembangan belum Rp. 3.000.000 dan raport Rp. 500.000");
+                dibayarkan = sp + keg;
+            } else if (pengembangan == 2 && SPP == 1 && kegiatan == 2 && raport == 2){
+                System.out.println ("uang pengembangan belum Rp. 3.000.000 dan kegiatan Rp. 3.500.000 dan raport Rp. 500.000");
+                dibayarkan = sp;
+            }
+        }
+        //ini 3
+        if (pengembangan == 1 && SPP == 2){
+            if (kegiatan == 1 && raport == 1){
+                System.out.println ("Uang SPP belum Rp. 1.200.000");
+                dibayarkan = peng + keg + rap;
+            } else if (pengembangan==1 && SPP == 2 && kegiatan == 2 && raport ==1){
+                System.out.println ("uang SPP belum Rp. 1.200.000 dan kegiatan 3.500.000");
+                dibayarkan = peng + rap;
+            } else if (pengembangan == 1 && SPP == 2 && kegiatan == 1 && raport == 2){
+                System.out.println ("uang SPP belum Rp. 1.200.000 dan raport Rp. 500.000");
+                dibayarkan = peng + keg;
+            } else if (pengembangan == 1 && SPP == 2 && kegiatan == 2 && raport == 2){
+                System.out.println ("uang pengembangan belum Rp. 3.000.000 dan kegiatan Rp. 3.500.000 dan raport Rp. 500.000");
+                dibayarkan = peng;
+            }
+        }
+        //ini 4
+        if (pengembangan == 2 && SPP == 2){
+            if (kegiatan == 1 && raport == 1){
+                System.out.println ("Uang pengembangan belum Rp. 3.000.000 dan SPP Rp. 1.200.000");
+                dibayarkan = keg + rap;
+            } else if (pengembangan==2 && SPP == 2 && kegiatan == 2 && raport ==1){
+                System.out.println ("uang pengembangan belum Rp. 3.000.000 dan SPP Rp. 1.200.000 dan kegiatan 3.500.000");
+                dibayarkan = rap;
+            } else if (pengembangan == 2 && SPP == 2 && kegiatan == 1 && raport == 2){
+                System.out.println ("uang pengembangan belum Rp. 3.000.000 dan SPP Rp. 1.200.000 dan raport Rp. 500.000");
+                dibayarkan = keg;
+            } else if (pengembangan == 2 && SPP == 2 && kegiatan == 2 && raport == 2){
+                System.out.println ("HARAP LUNASI SEKARANG!!!!");
+            }
+        }
+        System.out.println ("---------------------------------------------------------------");
+        System.out.println ("total = Rp. " +dibayarkan);
+}
+}
